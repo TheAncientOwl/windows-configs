@@ -50,6 +50,20 @@ $CustomAscii = @(
 #     }
 # }
 
+function info_gpu0 {
+    return @{
+        title = "GPU"
+        content = "Intel(R) UHD Graphics"
+    }
+}
+
+function info_gpu1 {
+    return @{
+        title = "GPU"
+        content = "NVIDIA GeForce RTX 3050 Ti Laptop GPU"
+    }
+}
+
 # Configure which disks are shown
 $ShowDisks = @("C:", "D:")
 # Show all available disks
@@ -70,9 +84,6 @@ $ShowDisks = @("C:", "D:")
 #     return (just-install list).Length
 # }
 
-function info_integrated_gpu {
-    return "Intel(R) UHD Graphics"
-}
 
 # Configure how to show info for levels
 # Default is for text only.
@@ -92,24 +103,22 @@ $diskstyle = 'bartext'
     "title"
     "dashes"
     "os"
-    "computer"
     "kernel"
     "uptime"
-    "blank"
-
-    "resolution"
     "pwsh"
     "terminal"
-    "blank"
-
+    "resolution"
+    "gpu0"
+    "gpu1"
+    "cpu"
+    "blank"    
     "cpu_usage"
     "memory"
     "disk"
-    "blank"
-    "cpu"
-    "gpu"
+    # "gpu"
     "blank"
     "colorbar"
+    # "computer"
     # "motherboard"
     # "custom_time"  # use custom info line
     # "ps_pkgs"  # takes some time
